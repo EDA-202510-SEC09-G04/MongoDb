@@ -14,11 +14,8 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-client = MongoClient(
-    "mongodb://ISIS2304E01202610:zUvMAR02S85V@157.253.236.88:8087/"
-)
 
-# Base de datos
+client = MongoClient(os.environ["MONGO_URI"])
 db = client["ISIS2304E01202610"]
 
 @app.get("/")
